@@ -1,6 +1,5 @@
-
 pub fn part_two(input: &str) -> usize {
-   todo!()
+    todo!()
 }
 
 #[cfg(test)]

@@ -1,6 +1,5 @@
-const STRING_DIGITS: [&str; 9] = [
-    "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
-];
+const STRING_DIGITS: [&str; 9] =
+    ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
 
 pub fn part_two(input: &str) -> u32 {
     input
@@ -8,12 +7,9 @@ pub fn part_two(input: &str) -> u32 {
         .map(|line| {
             let mut digits = (0..line.len()).filter_map(|i| match line.chars().nth(i) {
                 Some(c) if c.is_ascii_digit() => Some(c as usize - '0' as usize),
-                _ => STRING_DIGITS
-                    .iter()
-                    .enumerate()
-                    .find_map(|(digit_index, digit)| {
-                        line[i..].starts_with(digit).then_some(digit_index + 1)
-                    }),
+                _ => STRING_DIGITS.iter().enumerate().find_map(|(digit_index, digit)| {
+                    line[i..].starts_with(digit).then_some(digit_index + 1)
+                }),
             });
             let first = digits.next().unwrap();
             let last = digits.last().unwrap_or(first);

@@ -24,7 +24,7 @@ mod tests {
         a1b2c3d4e5f
         treb7uchet
     "};
-    
+
     #[test]
     fn part_one() {
         let result = crate::part_one(PART_ONE_EXAMPLE);

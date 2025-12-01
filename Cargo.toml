@@ -1,5 +1,9 @@
 [workspace]
-resolver = "2"
+resolver = "3"
 members = [
-    "years/2023/*"
+    "years/2023/*",
+    "years/2025/*",
 ]
+
+[workspace.package]
+edition = "2024"
